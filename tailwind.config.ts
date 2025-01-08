@@ -8,19 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors:{
-        primary: '#142687',
-        white: '#FFFFFF',
-        background: '#DEE6EB',
-        black: '#000000',
-        gradientFrom: '#1F3D8E',
-        gradientTo: '#3D76E4',
-        gray: '#E5E7EB',
-        warning: '#E12D2C',
-        link: '#0055CC',
-        green: '#54B206',
-        yellow: '#F4DF72'
-      }
+      colors: {
+        primary: "#8479D1",
+        secondary: "#FFDAA3",
+        white: "#FFFFFF",
+        background: "#151515",
+        warning: "#E12D2C",
+        green: "#54B206",
+        yellow: "#FFDAA3",
+        red: '#FF7777',
+        black: '#232323',
+        gray: '#6F6F6F'
+      },
     },
   },
   plugins: [],

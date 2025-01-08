@@ -7,8 +7,8 @@ const SearchResults = ({ trips }) => {
   console.log("FILTERED ", trips);
   return (
     <div className="my-4">
-      <p>
-        <span className="font-bold">{trips.length}</span> trips found
+      <p className="text-white mb-4">
+        <span className="font-bold text-primary">{trips.length}</span> trips found
       </p>
 
       <section className="grid grid-cols-4 gap-4">

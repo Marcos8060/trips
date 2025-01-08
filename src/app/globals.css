@@ -9,7 +9,7 @@
 
   .trip__background{
     object-fit: contain;
-    height: 50vh;
+    height: 30vh;
     background: url('/images/background.jpg');
     background-size: cover;
     background-position: center;

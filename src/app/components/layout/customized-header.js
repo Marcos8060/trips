@@ -26,7 +26,7 @@ const CustomizedHeader = () => {
   };
 
   return (
-    <section className="h-[8vh] py-6 px-6 flex items-center justify-between">
+    <section className="h-[8vh] py-6 px-6 flex items-center justify-between bg-background text-white">
       <div>
         <h1 className="font-bold text-2xl">
           {pathname === "/dashboard/trips" ? "Trips Management" : "Trips Over Time"}

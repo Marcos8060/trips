@@ -39,24 +39,46 @@ const TripsGraph = () => {
     chart: {
       type: "line",
       height: 300,
+      backgroundColor: "#151515", 
+      borderRadius: 20,           
+      borderColor: "#8479D1",    
+      borderWidth: 1,
     },
     title: {
       text: "Number of Trips Per Month",
       style: {
-        fontSize: "16px",
+        fontSize: "14px",
+        color: "#FFFFFF",
       },
     },
     xAxis: {
       categories: allMonths,
       title: {
         text: "Months",
+        style: {
+          color: "#FFFFFF",
+        },
+      },
+      labels: {
+        style: {
+          color: "#FFFFFF",
+        },
       },
     },
     yAxis: {
       min: 0,
       title: {
         text: "Number of Trips",
+        style: {
+          color: "#FFFFFF", 
+        },
       },
+      labels: {
+        style: {
+          color: "#FFFFFF",
+        },
+      },
+      gridLineWidth: 0,
     },
     legend: {
       enabled: false,
@@ -71,7 +93,7 @@ const TripsGraph = () => {
       {
         name: "Trips",
         data: tripsPerMonth,
-        color: "#007BFF",
+        color: "#8479D1",
       },
     ],
   });

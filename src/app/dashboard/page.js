@@ -34,22 +34,31 @@ const Dashboard = () => {
         {loading ? (
           <Skeleton
             baseColor="#c0c0c0"
-            highlightColor="#f0f0f0"
-            count={2}
+            highlightColor="#8479D1"
+            count={4}
             height={100}
           />
         ) : (
           <TripsGraph />
         )}
       </div>
-      <section className="flex gap-4 justify-between my-4">
-        <div className="w-1/2">
-          <LatestTrips />
-        </div>
-        <div className="w-1/2">
-          <TopDestinations />
-        </div>
-      </section>
+      {loading ? (
+        <Skeleton
+          baseColor="#c0c0c0"
+          highlightColor="#8479D1"
+          count={3}
+          height={100}
+        />
+      ) : (
+        <section className="flex gap-8 justify-between my-12">
+          <div className="w-1/2">
+            <LatestTrips />
+          </div>
+          <div className="w-1/2">
+            <TopDestinations />
+          </div>
+        </section>
+      )}
     </>
   );
 };

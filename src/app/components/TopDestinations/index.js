@@ -12,7 +12,6 @@ if (typeof Highcharts === "object") {
 const TopDestinations = () => {
   const { trips } = useSelector((store) => store.trips);
 
-  // Calculate the destination counts
   const destinationCounts = useMemo(() => {
     if (!Array.isArray(trips.trips)) return {};
 
@@ -23,16 +22,23 @@ const TopDestinations = () => {
     }, {});
   }, [trips]);
 
-  // Prepare the top 3 destinations
+    const getCustomColor = (index) => {
+      const colors = ["#8479D1", "#FFDAA3", "#FF7777"];
+      return colors[index % colors.length]; 
+    };
+
   const topDestinations = useMemo(() => {
     return Object.entries(destinationCounts)
       .sort(([, countA], [, countB]) => countB - countA)
       .slice(0, 3)
-      .map(([destination, count]) => ({
+      .map(([destination, count], index) => ({
         name: destination,
         y: count,
+        color: getCustomColor(index),
       }));
   }, [destinationCounts]);
+
+
 
   // Chart options
   const options = useMemo(
@@ -40,15 +46,21 @@ const TopDestinations = () => {
       chart: {
         type: "pie",
         height: 300,
+        backgroundColor: "#151515",
+        borderRadius: 20,
+        borderColor: "#8479D1",
+        borderWidth: 1,
       },
       title: {
-        text: "Top 3 Destinations Visited by Customers",
+        text: "Top 3 Destinations",
         style: {
           fontSize: "16px",
+          color: "#FFFFFF",
         },
       },
       tooltip: {
-        pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b> ({point.y} trips)",
+        pointFormat:
+          "{series.name}: <b>{point.percentage:.1f}%</b> ({point.y} trips)",
       },
       accessibility: {
         point: {
@@ -59,7 +71,7 @@ const TopDestinations = () => {
         pie: {
           allowPointSelect: true,
           cursor: "pointer",
-          innerSize: "50%", // Donut chart
+          innerSize: "50%",
           dataLabels: {
             enabled: true,
             format: "<b>{point.name}</b>: {point.percentage:.1f}%",
@@ -69,7 +81,7 @@ const TopDestinations = () => {
       series: [
         {
           name: "Trips",
-          colorByPoint: true, // Automatically assign different colors to each slice
+          colorByPoint: true,
           data: topDestinations,
         },
       ],

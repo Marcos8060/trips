@@ -5,7 +5,7 @@ import Sidebar from "../components/layout/layout";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-screen flex-row md:overflow-hidden bg-background">
-      <section className="md:block hidden w-full flex-none md:w-1/5">
+      <section className="md:block hidden w-full flex-none md:w-1/5 border border-r-primary">
         <Sidebar />
       </section>
       <section className="w-full overflow-y-auto">

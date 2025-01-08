@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { IoLocation } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
-
+import Link from "next/link";
 
 const AllTrips = () => {
   const { trips } = useSelector((store) => store.trips);
@@ -12,7 +12,11 @@ const AllTrips = () => {
     <section className="grid grid-cols-4 gap-4">
       {Array.isArray(trips.trips) &&
         trips.trips.map((trip) => (
-          <div key={trip.id} className="trip__background rounded-3xl relative">
+          <Link
+            key={trip.id}
+            href={`/dashboard/trips/${trip.id}`}
+            className="trip__background rounded-3xl relative"
+          >
             <section className="">
               <p className="absolute left-4 top-4 text-sm">
                 {trip.request_date}
@@ -54,7 +58,7 @@ const AllTrips = () => {
                 </p>
               </div>
             </section>
-          </div>
+          </Link>
         ))}
     </section>
   );
