@@ -54,13 +54,8 @@ const CustomizedHeader = () => {
             "aria-labelledby": "basic-button",
           }}
         >
-          <MenuItem>
-            <Link className="text-sm" href="/profile">
-              Profile
-            </Link>
-          </MenuItem>
           <MenuItem onClick={logoutUser}>
-            <p className="text-sm">Logout</p>
+            <p className="text-sm cursor-pointer">Logout</p>
           </MenuItem>
         </Menu>
       </div>
