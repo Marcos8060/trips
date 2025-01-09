@@ -4,7 +4,6 @@ import { IoLocation } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 
 const SearchResults = ({ trips }) => {
-  console.log("FILTERED ", trips);
   return (
     <div className="my-4">
       <p className="text-white mb-4">
