@@ -14,7 +14,7 @@ const config: Config = {
         white: "#FFFFFF",
         background: "#151515",
         warning: "#E12D2C",
-        green: "#54B206",
+        green: "#72BF77",
         yellow: "#FFDAA3",
         red: '#FF7777',
         black: '#232323',
