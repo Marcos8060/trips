@@ -29,7 +29,7 @@ const TripsGraph = () => {
 
   const tripsPerMonth = Array.isArray(trips.trips)
     ? trips.trips.reduce((acc, trip) => {
-        const monthIndex = new Date(trip.request_date).getMonth();
+        const monthIndex = new Date(trip.pickup_date).getMonth();
         acc[monthIndex] = (acc[monthIndex] || 0) + 1;
         return acc;
       }, new Array(12).fill(0))

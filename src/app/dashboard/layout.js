@@ -1,8 +1,9 @@
+import React from "react";
 import CustomizedHeader from "../components/layout/customized-header";
 import Sidebar from "../components/layout/layout";
 
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }) {
   return (
     <div className="flex h-screen flex-row md:overflow-hidden bg-background">
       <section className="md:block hidden w-full flex-none md:w-1/5 border border-r-primary">

@@ -1,15 +1,12 @@
 "use client";
+import React from "react";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import 'leaflet/dist/leaflet.css';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({children}) {
   return (
     <html lang="en">
       <head>
