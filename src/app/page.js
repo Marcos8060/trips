@@ -35,12 +35,12 @@ export default function Home() {
             Trips Management
           </h1>
         </div>
-        <div className="md:w-1/2 w-full bg-white shadow md:px-12 px-4 md:rounded-tr-xl md:rounded-br-xl h-[70vh] flex items-center justify-center">
+        <div className="md:w-1/2 w-full bg-background border border-primary shadow md:px-12 px-4 md:rounded-tr-xl md:rounded-br-xl h-[70vh] flex items-center justify-center">
           <form onSubmit={handleLogin} className="space-y-4 w-full">
             <input
               required
               id="username"
-              className="block border rounded text-xs border-gray py-3 px-4 focus:outline-none w-full"
+              className="block border rounded text-xs border-gray bg-black text-white py-3 px-4 focus:outline-none w-full"
               type="text"
               placeholder="Username"
               name="username"
@@ -48,7 +48,7 @@ export default function Home() {
               onChange={(e) => setUsername(e.target.value)}
             />
             <input
-              className="block border rounded text-xs border-gray py-3 px-4 focus:outline-none w-full"
+              className="block border rounded bg-black text-xs border-gray text-white py-3 px-4 focus:outline-none w-full"
               placeholder="Password"
               name="password"
               value={password}
