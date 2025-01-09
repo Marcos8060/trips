@@ -3,8 +3,6 @@ import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import "devextreme/dist/css/dx.material.blue.light.css";
-import "./devextreme.css";
 
 export default function RootLayout({
   children,

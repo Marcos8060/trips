@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchAllTrips } from "../redux/features/trips";
 import TripsGraph from "../components/trips-graph/";
 import Skeleton from "react-loading-skeleton";
@@ -10,7 +10,6 @@ import TopDestinations from "../components/TopDestinations";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  const { trips } = useSelector((store) => store.trips);
   const [loading, setLoading] = useState(true);
 
   const getTrips = async () => {
@@ -19,6 +18,7 @@ const Dashboard = () => {
       await dispatch(fetchAllTrips());
       setLoading(false);
     } catch (error) {
+      console.log(error);
       setLoading(false);
     } finally {
       setLoading(false);

@@ -26,6 +26,7 @@ const Trips = () => {
       await dispatch(fetchAllTrips());
       setLoading(false);
     } catch (error) {
+      console.log(error);
       setLoading(false);
     }
   };
@@ -108,7 +109,10 @@ const Trips = () => {
     <div>
       <section>
         <form>
-          <label className="uppercase text-xs font-bold text-white" htmlFor="search">
+          <label
+            className="uppercase text-xs font-bold text-white"
+            htmlFor="search"
+          >
             Keyword
           </label>
           <input
@@ -120,9 +124,13 @@ const Trips = () => {
             placeholder="Search by distance, duration, keyword"
           />
         </form>
-        <div className="flex items-center justify-between border border-primary rounded-3xl px-4 text-white mt-4">
-          <FilterDistance setSelectedDistance={setSelectedDistance} />
-          <FilterTime setSelectedTime={setSelectedTime} />
+        <div className="flex items-center justify-between mt-4">
+          <div className="border border-primary rounded-3xl px-4 text-white">
+            <FilterDistance setSelectedDistance={setSelectedDistance} />
+          </div>
+          <div className="border border-primary rounded-3xl px-4 text-white">
+            <FilterTime setSelectedTime={setSelectedTime} />
+          </div>
         </div>
       </section>
 

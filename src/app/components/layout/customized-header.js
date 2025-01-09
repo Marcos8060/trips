@@ -3,7 +3,6 @@ import { BsChevronDown } from "react-icons/bs";
 import Menu from "@mui/material/Menu";
 import { useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
-import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
 const CustomizedHeader = () => {
